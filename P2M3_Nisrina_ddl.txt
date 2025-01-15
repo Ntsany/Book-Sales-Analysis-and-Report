@@ -1,0 +1,27 @@
+URL dataset: https://www.kaggle.com/datasets/thedevastator/books-sales-and-ratings
+
+Syntax DDL untuk buat table:
+CREATE TABLE table_m3 (
+    "index" INTEGER,
+    "Publishing Year" NUMERIC,
+    "Book Name" TEXT,
+    "Author" TEXT,
+    "language_code" TEXT,
+    "Author_Rating" TEXT,
+    "Book_average_rating" NUMERIC,
+    "Book_ratings_count" INTEGER,
+    "genre" TEXT,
+    "gross sales" NUMERIC,
+    "publisher revenue" NUMERIC,
+    "sale price" NUMERIC,
+    "sales rank" INTEGER,
+    "Publisher" TEXT,
+    "units sold" INTEGER
+);
+
+
+Syntax DML untuk insert data ke database dengan COPY
+COPY table_m3 ("index", "Publishing Year", "Book Name", "Author", "language_code", "Author_Rating", "Book_average_rating", "Book_ratings_count", "genre", "gross sales", "publisher revenue", "sale price", "sales rank", "Publisher", "units sold")
+FROM '/tmp/P2M3_Nisrina_data_raw.csv'
+DELIMITER ','
+CSV HEADER;
